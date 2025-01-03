@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Type speed test</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <header>
+        <h1>BullType</h1>
+    </header>
+    <section>
+        <div id="configuration">
+            <span>Number</span>
+            <input type="checkbox" id="num">
+            <span>Punctuations</span>
+            <input type="checkbox" id="punc">
+            <span>Lower case</span>
+            <input type="checkbox" id="lower" checked>
+            <span>Max words</span>
+            <input type="number" id="maxWords" value="30">
+            <button id="btn_apply">Apply</button>
+        </div>
+        <div id="typeArea" class="typeArea" tabindex="0">
+        <div id="words" class="words"></div>
+        </div>
+        <div id="matrics" class="matrics">
+            <h2>Stats:</h2>
+            <div class="stats">
+                <div class="label">WPM</div>
+                <div id="wpm"></div>
+            </div>
+            <div class="stats">
+                <div class="label">RAW</div>
+                <div id="rwpm"></div>
+            </div>
+            <div class="stats">
+                <div class="label">CPM</div>
+                <div id="cpm"></div>
+            </div>
+            <div class="stats">
+                <div class="label">RAW</div>
+                <div id="rcpm"></div>
+            </div>
+            <div class="stats">
+                <div class="label">Accuracy</div>
+                <div id="accuracy"></div>
+            </div>
+
+        </div>
+    </section>
+    <script src="script.js"></script>
+</body>
+
+</html>

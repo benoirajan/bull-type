@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Type speed test</title>
+    <style>
+        .before {
+            color: rgb(231, 231, 231);
+        }
+
+        .after {
+            color: rgb(53, 53, 53);
+        }
+
+        .word {
+            margin-right: 10px;
+        }
+
+        .words {
+            display: flex;
+            flex-wrap: wrap;
+            font-family: monospace;
+            font-size: 2.3em;
+            width: 80%;
+            margin: 31px auto;
+        }
+
+        .active {
+            box-shadow: inset 0px -2px rgb(119, 119, 119);
+        }
+
+        .active .after::before {
+            content: '|';
+            padding: 0;
+            margin: 0px -8px;
+            animation: blink 1s linear infinite;
+        }
+
+        @keyframes blink {
+            0%{
+                opacity: 0;
+            }
+            40%{
+                opacity: 0;
+            }
+            60%{
+                opacity: 1;
+            }
+            100%{
+                opacity: 1;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div id="words" class="words"></div>
+    <input id="input" type="text">
+    <div>
+        <p id="iwpm"></p>
+        <p id="cpm"></p>
+        <div class="finished">
+            <p id="wpm"></p>
+        </div>
+    </div>
+    <script>
+        const words = document.getElementById('words')
+        // const after = document.getElementById('after')
+        const input = document.getElementById('input')
+        input.focus()
+        var typedWords = 0
+
+        var wholeText = ''
+
+        const text = 'Js Math is a built-in object in Java Script that provides mathematical functions and constants for performing mathematical operations. It allows you to perform basic arithmetic operations like addition, subtraction, multiplication, and division, as well as dash'
+
+        const [code, count] = setup(text);
+        words.innerHTML = code
+        const wordSpans = words.childNodes
+
+        var correctWord = ''
+        var starTime = -1
+        var wordTime = -1
+        var oldWordTime = -1
+
+        wordSpans[typedWords].classList.add('active')
+        input.addEventListener("keyup", (event) => {
+            if (starTime == -1)
+                starTime = new Date().getTime()
+            // console.log(event.target.value)
+            if (typedWords < count - 1 && event.code === 'Space' && wordSpans[typedWords].innerText === correctWord) {
+
+                reset()
+
+                if (typedWords == count)
+                    finished()
+                return
+            }
+
+
+            index = wordSpans[typedWords].innerText.indexOf(event.target.value)
+
+            if (index == 0 && wordSpans[typedWords].innerText.substring(0, input.value.length) === input.value) {
+                correctWord = input.value
+                // console.log(correctWord)
+                fullword = wordSpans[typedWords].innerText
+                wordSpans[typedWords].getElementsByClassName('before')[0].innerText = correctWord
+                wordSpans[typedWords].getElementsByClassName('after')[0].innerText = fullword.substring(correctWord.length)
+                // console.log(correctWord, '  ', fullword.substring(correctWord.length))
+                if (typedWords == count - 1)
+                    if (input.value.length == fullword.length)
+                        finished()
+            }
+            else
+                input.value = correctWord
+        });
+
+        function setup(text) {
+            const spaceSepText = text.split(' ')
+            var htmlCode = ''
+            var i = 0
+            for (word of spaceSepText) {
+
+                htmlCode += `<span id='w${i++}' class="word"><span class="before"></span><span class='after'>` + word + '</span></span>'
+            }
+
+            return [htmlCode, spaceSepText.length]
+        }
+
+        function finished() {
+            reset()
+
+            wpm = 60000 / ((new Date().getTime() - starTime) / count)
+            console.log('finished', 'wpm: ' + wpm)
+
+            document.getElementById('wpm').innerText = 'Average WPM: ' + wpm
+        }
+
+        function update(nTime, oTime, charCnt) {
+            if (oTime == -1)
+                return
+            // console.log(nTime,oTime, charCnt)
+            wTime = nTime - oTime
+            charTime = wTime / charCnt
+            wpm = 60000 / wTime
+            cpm = 60000 / charTime
+
+            console.log('wpm:' + wpm, 'cpm:' + cpm)
+            document.getElementById('iwpm').innerText = 'WPM: ' + wpm
+            document.getElementById('cpm').innerText = 'CPM: ' + cpm
+        }
+
+        function reset() {
+            oldWordTime = wordTime
+            wordTime = new Date().getTime()
+            update(wordTime, oldWordTime, correctWord.length + 1)
+
+            input.value = ''
+            correctWord = ''
+            typedWords++
+
+            if (typedWords > 0)
+                wordSpans[typedWords - 1].classList.remove('active')
+            if (typedWords < count)
+                wordSpans[typedWords].classList.add('active')
+        }
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,165 @@
+.correct {
+    color: #E1BEE7;
+}
+
+letter[type=space] {
+    color: #0000;
+}
+
+.incorrect {
+    color: #E91E63;
+    text-decoration-line: underline;
+    text-decoration-style: solid;
+    text-decoration-color: #E91E63;
+}
+
+
+letter {
+    color: #4A148C;
+    display: inline;
+}
+
+#configuration{
+    width: fit-content;
+    /* background: #BA68C8; */
+    padding: 7px 14px 10px 0px;
+    margin: 60px auto 0;
+}
+
+#configuration span{color: #4A148C;font-family: cursive;margin: 0 0 0 11px;}
+
+.word {
+    /* margin-right: 10px; */
+}
+
+.words {
+    display: flex;
+    flex-wrap: wrap;
+    font-size: 2.0em;
+    padding: 16px 12px 17px;
+    font-family: monospace;
+}
+
+.typeArea{
+    width: 76%;
+    margin: 0ex auto 3ex;
+    background: #fef5ff;
+    display: flex;
+    position: relative;
+}
+
+.typeArea:focus .words::after{
+    content: '';
+    backdrop-filter: none;
+}
+
+.typeArea:focus-visible{
+    outline: none;
+}
+
+.words::after{
+    color: #4A148C;
+    backdrop-filter: blur(5px);
+    content: "Click Here";
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    background: #80808000;
+    left: 0;
+    text-align: center;
+    align-content: center;
+}
+
+.active::before {
+    content: '|';
+    padding: 0;
+    margin: 0px -7px;
+    color: black;
+    animation: blink 1s linear infinite;
+}
+
+@keyframes blink {
+    0% {
+        opacity: 1;
+    }
+
+    40% {
+        opacity: 1;
+    }
+
+    60% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 0;
+    }
+}
+
+.matrics {
+    margin: 0 auto;
+    display: flex;
+    visibility: hidden;
+    font-size: 18px;
+    width: 61%;
+    border-radius: 8px;
+    font-family: cursive;
+    box-shadow: #BA68C8 2px 4px 8px 1px;
+    padding: 5px 19px 5px 20px;
+    justify-content: space-around;
+    align-items: center;
+    flex-direction: row;
+}
+
+header {
+    background: #7B1FA2;
+}
+
+header h1 {
+    color: white;
+    font-family: cursive;
+    margin: 0;
+    padding: 21px 61px;
+}
+
+body {
+    margin: 0;
+    padding-bottom: 6em;
+    box-shadow: inset #7b1fa2 0 0 10px 1px;
+}
+
+.matrics h2 {
+    font-size: 4ex;
+    color: #6A1B9A;
+}
+
+.stats {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.stats .label {
+    font-size: 2ex;
+    font-weight: bold;
+    color: #EC407A;
+}
+
+input[type=number]{
+    width: 44px;
+    padding: 6px 8px 5px;
+    border-radius: 8px;
+    border: #4A148C solid 1px;
+    color: #4A148C;
+    margin-right: 8px;
+}
+
+button{
+    padding: 7px 16px 6px;
+    background: #7B1FA2;
+    color: white;
+    border: none;
+    text-transform: uppercase;
+    border-radius: 4px;
+}
