@@ -1,11 +1,11 @@
-# Type Speed Testing App
+# BullType
 >
 ![Bull type home page](images/bulltype-1.png)
 ![Bull type in working](images/bull-type-2.png)
 
 ## Overview
 
-Welcome to the Type Speed Testing App! This project is a simple yet engaging web application that allows users to test and improve their typing speed. Built using HTML, CSS, and JavaScript, this app provides a fun way to challenge yourself and enhance your typing skills.
+Welcome to the BullType! This project is a simple yet engaging web application that allows users to test and improve their typing speed. Built using HTML, CSS, and JavaScript, this app provides a fun way to challenge yourself and enhance your typing skills.
 
 ## Features
 
