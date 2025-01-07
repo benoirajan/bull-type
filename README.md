@@ -1,7 +1,7 @@
 # Type Speed Testing App
-
-![Type Speed Testing App](screenshot1.png) <!-- Replace with your actual screenshot file names -->
-![Type Speed Testing App](screenshot2.png)
+>
+![Bull type home page](images/bulltype-1.png)
+![Bull type in working](images/bull-type-2.png)
 
 ## Overview
 
@@ -18,8 +18,9 @@ Welcome to the Type Speed Testing App! This project is a simple yet engaging web
 
 Here are some screenshots of the app in action:
 
-![Screenshot 1](screenshot1.png) <!-- Replace with your actual screenshot file names -->
-![Screenshot 2](screenshot2.png)
+![home page](images/bulltype-1.png)
+![Typing](images/bull-type-2.png)
+![Results](images/bull-type-results.png)
 
 ## Technologies Used
 
