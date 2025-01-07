@@ -1,4 +1,5 @@
 # BullType
+[Check it out](https://benoirajan.github.io/bull-type/)
 >
 ![Bull type home page](images/bulltype-1.png)
 ![Bull type in working](images/bull-type-2.png)
@@ -6,7 +7,7 @@
 ## Overview
 
 Welcome to the BullType! This project is a simple yet engaging web application that allows users to test and improve their typing speed. Built using HTML, CSS, and JavaScript, this app provides a fun way to challenge yourself and enhance your typing skills. 
-Checkout the live version [here](https://github.com/benoirajan/bull-type.git)
+Checkout the live version [here](https://benoirajan.github.io/bull-type/)
 
 ## Features
 
