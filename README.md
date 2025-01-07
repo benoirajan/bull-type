@@ -5,7 +5,8 @@
 
 ## Overview
 
-Welcome to the BullType! This project is a simple yet engaging web application that allows users to test and improve their typing speed. Built using HTML, CSS, and JavaScript, this app provides a fun way to challenge yourself and enhance your typing skills.
+Welcome to the BullType! This project is a simple yet engaging web application that allows users to test and improve their typing speed. Built using HTML, CSS, and JavaScript, this app provides a fun way to challenge yourself and enhance your typing skills. 
+Checkout the live version [here](https://github.com/benoirajan/bull-type.git)
 
 ## Features
 
@@ -34,7 +35,7 @@ To run the Type Speed Testing App locally, follow these steps:
 
 1. Clone the repository:
    ```bash
-   git clone https://github.com/yourusername/type-speed-testing-app.git
+   git clone https://github.com/benoirajan/bull-type.git
    Navigate to the project directory:
 
 2. Run
