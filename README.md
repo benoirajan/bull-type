@@ -9,7 +9,7 @@ Welcome to the BullType! This project is a simple yet engaging web application t
 
 ## Features
 
-- **Real-time Typing Test**: Measure your typing speed in words per minute (WPM) with a variety of text samples.
+- **Real-time Typing Test**: Measure your typing speed in words per minute (WPM), charecters per minute (CPM), raw of both and accuracy with a variety of text samples. (Text samples are generated automatically)
 - **User -Friendly Interface**: Clean and intuitive design for a seamless user experience.
 - **Performance Tracking**: Keep track of your best scores and monitor your progress over time.
 - **Responsive Design**: Works well on both desktop and mobile devices.
